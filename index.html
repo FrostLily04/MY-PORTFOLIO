@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY Portfolio Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in" data-aos-duration="1500"><span>April</span></div>
+      <div class="links">
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#home">Home</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#skills">Skills</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#projects">Projects</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#testimonials">Testimonials</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="#contact">Contact</a></div>
+      </div>
+      <i class="fa-solid fa-bars menu" onclick="menu()"></i>
+    </div>
+
+    <div class="dropdown">
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      <div class="link"><a href="#home" onclick="cancel()">Home</a></div>
+      <div class="link"><a href="#about" onclick="cancel()">About</a></div>
+      <div class="link"><a href="#skills" onclick="cancel()">Skills</a></div>
+      <div class="link"><a href="#projects" onclick="cancel()">Projects</a></div>
+      <div class="link"><a href="#testimonials" onclick="cancel()">Testimonials</a></div>
+      <div class="link"><a href="#contact" onclick="cancel()">Contact</a></div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="main-container">
+      <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+        <img src="my-picture.jpg" alt="My Picture">
+      </div>
+      <div class="content">
+        <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>April</span></h1>
+        <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
+          "Welcome to my portfolio!" This space is dedicated to showcasing the projects, skills, and experiences that represent my journey as a learner and creator. I have a strong interest in technology, design, and problem-solving, and I enjoy turning ideas into practical solutions. Through the works featured here, you'll see not only my technical skills but also my creativity, attention to detail, and commitment to growth.
+        </p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/19uzqVGGiV/" target="_blank" class="social-link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2Fprl.nby%3Figsh%3DMXJ4dWJxM2ptaXVxeg%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZjlBaGJaUUlUSEwydDAxQwEebXUeApiPxVLAaSQ13d3ya1ZDsUZfpSnZ8S41RveXgzKNvWjsUZlQoFaY_2M_aem_w8vMqOOJiOFpe27SThYE5g&h=AT0lRCrrdHnIwWzh5MsOwzJF3HVJvhiiSBwO5O755dE8z1U-RMOfYwhSr0Im3KAA0d8DmQvxLP2KSJS-dec0Eegb1GfG7_4CIqTKoeU5vOPhUNpnHUVV-TMICdKo5KiElJLHpg" target="_blank" class="social-link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400" aria-label="Twitter"><i class="fab fa-instagram"></i></a>
+          <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fx.com%2FFrostLily04%3Ft%3DPZoSYsdcQOcnGLYRLjooIQ%26s%3D09%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExZjlBaGJaUUlUSEwydDAxQwEe7fM9Yp0tKjeyntvmV7q-RedlEWBFen0Ll4M69pYw5Sthif4VQ4zvrCLFE0o_aem_xQp11gsK3JWyYruI1Rl8zA&h=AT0lRCrrdHnIwWzh5MsOwzJF3HVJvhiiSBwO5O755dE8z1U-RMOfYwhSr0Im3KAA0d8DmQvxLP2KSJS-dec0Eegb1GfG7_4CIqTKoeU5vOPhUNpnHUVV-TMICdKo5KiElJLHpg" target="_blank" class="social-link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600" aria-label="Instagram"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
+          <button>Hire Me</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><span>About Me</span></div>
+      <div class="about-details">
+        <div class="left" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">
+          <img src="Photo.jpg" alt="About Picture">
+        </div>
+        <div class="right">
+          <div class="topic" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200">Hi There, I'm April</div>
+          <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="300">
+            I'm a college student currently studying Information Technology. I enjoy learning new things, exploring creative ideas, and applying what I've learned in class to real projects.
+          </p>
+          <div class="button" data-aos="zoom-in-right" data-aos-duration="1500" data-aos-delay="400">
+            <button>Download CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="content">
+      <div class="title" data-aos="fade-up" data-aos-duration="1200"><span>My Skills</span></div>
+      <div class="skills-details">
+        <div class="text">
+          <div class="topic" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">Skills Reflect Our Knowledge</div>
+          <p data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">
+            As a beginner, I'm still in the process of building and improving my skills, but I've already developed a foundation in areas that interest me. I enjoy learning by doing, and every project I work on helps me gain more confidence and experience.
+          </p>
+          <div class="experience" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+            <div class="num">5</div>
+            <div class="exp">Months Of <br> Experience</div>
+          </div>
+        </div>
+        <div class="boxes">
+          <div class="box"><div class="topic">HTML</div><div class="per">80%</div></div>
+          <div class="box"><div class="topic">CSS</div><div class="per">80%</div></div>
+          <div class="box"><div class="topic">JavaScript</div><div class="per">50%</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="content">
+      <div class="title" data-aos="fade-up" data-aos-duration="1200"><span>My Projects</span></div>
+      <div class="boxes">
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+          <div class="icon"><i class="fas fa-desktop"></i></div>
+          <div class="topic">Web Development</div>
+          <p>I'm still learning the basics of web development, but I've built simple websites using HTML and CSS.</p>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <div class="topic">Digital Marketing</div>
+          <p>I'm exploring the fundamentals of digital marketing, including social media and content creation.</p>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
+          <div class="icon"><i class="fas fa-android"></i></div>
+          <div class="topic">Affiliate Marketing</div>
+          <p>I'm learning about affiliate marketing strategies and how to effectively promote products online.</p>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="1000">
+          <div class="icon"><i class="fas fa-camera-retro"></i></div>
+          <div class="topic">Photography</div>
+          <p>I'm learning about composition, lighting, and editing to improve my photography skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="content">
+      <div class="title" data-aos="fade-up" data-aos-duration="1200"><span>Testimonials</span></div>
+      <div class="boxes">
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+          <div class="icon"><i class="fas fa-user"></i></div>
+          <div class="topic">Queen</div>
+          <p>"April is a fantastic designer! She helped me create a stunning website."</p>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+          <div class="icon"><i class="fas fa-user"></i></div>
+          <div class="topic">Engfa</div>
+          <p>"I loved working with April on my branding. She's very creative and attentive."</p>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="600">
+          <div class="icon"><i class="fas fa-user"></i></div>
+          <div class="topic">Lisa</div>
+          <p>"April's photography skills are top-notch! She captured our event beautifully."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="content">
+      <div class="title" data-aos="fade-up" data-aos-duration="1200"><span>Contact Me</span></div>
+      <div class="text">
+        <div class="topic" data-aos="fade-right" data-aos-duration="1200">Get In Touch With Me</div>
+        <p>I'm always open to discussing new projects or opportunities to collaborate. Feel free to reach out!</p>
+        <div class="button" data-aos="zoom-in" data-aos-duration="1200"><button><a href="mailto:aprilnaboya0@gmail.com">Let's Chat</a></button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="text">
+      <span>Created By April | <span class="far fa-copyright"></span> 2025 All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+
+    function menu() {
+      const dropdown = document.querySelector('.dropdown');
+      if (dropdown) {
+        dropdown.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function cancel() {
+      const dropdown = document.querySelector('.dropdown');
+      if (dropdown) {
+        dropdown.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      const dropdown = document.querySelector('.dropdown');
+      const menu = document.querySelector('.menu');
+      if (dropdown && dropdown.classList.contains('active') && 
+          !dropdown.contains(e.target) && !menu.contains(e.target)) {
+        cancel();
+      }
+    });
+  </script>
+
+</body>
+</html>
