@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cc0000;
+}
+
+/* Navigation Styles */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: bold;
+  z-index: 1001;
+}
+
+.logo span {
+  color: white;
+  text-shadow: 0 0 10px red;
+}
+
+.links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+}
+
+.link a {
+  position: relative;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: white;
+  font-weight: 550;
+  transition: 0.3s;
+  padding: 0.5rem 0;
+}
+
+.link a::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: red;
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: red;
+}
+
+.link a:hover::before {
+  width: 100%;
+}
+
+.menu {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  visibility: hidden;
+}
+
+.dropdown {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(10px);
+  transition: right 0.3s ease;
+  z-index: 1002;
+  padding: 5rem 2rem 2rem;
+}
+
+.dropdown.active {
+  right: 0;
+}
+
+.dropdown .link {
+  margin: 1rem 0;
+}
+
+.dropdown .link a {
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.dropdown .link a:hover {
+  background-color: red;
+  transform: translateX(10px);
+}
+
+.cancel {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1003;
+}
+
+/* Home Section */
+#home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 5% 2rem;
+}
+
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.main-container .image {
+  flex: 0 0 auto;
+  width: clamp(250px, 40vw, 550px);
+  height: clamp(250px, 40vw, 550px);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 50px red;
+  transition: transform 0.3s;
+}
+
+.main-container .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-container .image:hover {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.main-container .content {
+  flex: 1;
+  color: white;
+}
+
+.content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.content h1 span {
+  color: white;
+  text-shadow: 0 0 10px red;
+}
+
+.content p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0.2rem solid red;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+  color: black;
+  background-color: red;
+  box-shadow: 0 0 20px red;
+}
+
+.btn button {
+  padding: 1rem 2.5rem;
+  background-color: red;
+  color: white;
+  border: 2px solid red;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 150px;
+  min-height: 50px;
+}
+
+.btn button:hover {
+  transform: scale(1.05);
+  color: red;
+  background-color: transparent;
+  box-shadow: 0 0 40px red;
+}
+
+/* Section Base Styles */
+section {
+  width: 100%;
+  padding: 5rem 5% 3rem;
+}
+
+section .content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.title span {
+  color: white;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.title span::before,
+.title span::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: red;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title span::before {
+  width: 100px;
+  bottom: 0;
+}
+
+.title span::after {
+  width: 70px;
+  bottom: -7px;
+}
+
+/* About Section */
+.about {
+  background: black;
+}
+
+.about-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-details .left {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.about .left img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+}
+
+.about-details .right {
+  flex: 1;
+  min-width: 280px;
+}
+
+.topic {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.about-details .right p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.button button {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  background: red;
+  color: white;
+  border: 2px solid red;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 150px;
+  min-height: 50px;
+}
+
+.button button:hover {
+  background-color: transparent;
+  color: red;
+  box-shadow: 0 0 20px red;
+}
+
+/* Skills Section */
+.skills {
+  background: black;
+}
+
+.skills-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.skills-details .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.skills-details p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.experience {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.experience .num {
+  color: white;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: bold;
+}
+
+.experience .exp {
+  color: white;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.skills-details .boxes {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skills-details .box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.skills-details .box:hover {
+  background: rgba(255, 0, 0, 0.1);
+  transform: translateX(10px);
+  box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+}
+
+.skills-details .box .topic {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  color: red;
+  margin: 0;
+}
+
+.skills-details .box .per {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: red;
+  font-weight: bold;
+}
+
+/* Projects Section */
+.projects {
+  background: black;
+}
+
+.projects .boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.projects .box {
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  border-radius: 12px;
+  padding: 2rem;
+  color: white;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.projects .box:hover {
+  background: red;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+}
+
+.projects .box .icon {
+  height: 60px;
+  width: 60px;
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  margin: 0 auto 1rem;
+  transition: all 0.3s;
+}
+
+.projects .box:hover .icon {
+  background: white;
+  color: red;
+}
+
+.projects .box .topic {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  margin: 1rem 0;
+  color: white;
+}
+
+.projects .box p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Testimonials Section */
+.testimonials {
+  background: black;
+}
+
+.testimonials .boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.testimonials .box {
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  border-radius: 12px;
+  padding: 2rem;
+  color: white;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.testimonials .box:hover {
+  background: red;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5);
+}
+
+.testimonials .box .icon {
+  height: 60px;
+  width: 60px;
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  margin: 0 auto 1rem;
+  transition: all 0.3s;
+}
+
+.testimonials .box:hover .icon {
+  background: white;
+  color: red;
+}
+
+.testimonials .box .topic {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.testimonials .box p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+}
+
+/* Contact Section */
+.contact {
+  background: black;
+}
+
+.contact .text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  margin: 1.5rem 0 2rem;
+}
+
+/* Footer */
+footer {
+  background: red;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+footer .text span {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: white;
+}
+
+
+   /* RESPONSIVE STYLES */
+
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  section {
+    padding: 4rem 4% 2rem;
+  }
+
+  #home {
+    padding: 5rem 4% 2rem;
+  }
+
+  .main-container {
+    gap: 2rem;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    visibility: visible;
+  }
+}
+
+/* Mobile Responsive (below 768px) */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    visibility: visible;
+  }
+
+  nav {
+    padding: 0.8rem 0;
+  }
+
+  section {
+    padding: 3rem 4% 2rem;
+  }
+
+  #home {
+    padding: 5rem 4% 2rem;
+  }
+
+  .main-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .main-container .image {
+    width: clamp(200px, 60vw, 350px);
+    height: clamp(200px, 60vw, 350px);
+  }
+
+  .main-container .content {
+    width: 100%;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .about-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-details .left {
+    order: -1;
+  }
+
+  .about .left img {
+    max-width: 300px;
+  }
+
+  .skills-details {
+    flex-direction: column;
+  }
+
+  .experience {
+    justify-content: center;
+  }
+
+  .projects .boxes,
+  .testimonials .boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .btn button,
+  .button button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .dropdown {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Extra Small Devices (below 480px) */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 4%;
+  }
+
+  section {
+    padding: 2.5rem 4% 1.5rem;
+  }
+
+  #home {
+    padding: 4rem 4% 1.5rem;
+  }
+
+  .main-container .image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .projects .box,
+  .testimonials .box {
+    padding: 1.5rem;
+  }
+
+  .about .left img {
+    max-width: 250px;
+  }
+}
